@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchRecipes(searchTerm) {
         const apiUrl = searchTerm
             ? `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
-            : 'https://www.themealdb.com/api/json/v1/1/search.php?f=c'; //API HENTET
+            : 'https://www.themealdb.com/api/json/v1/1/search.php?f=c';
 
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
                 const recipes = data.meals;
                 if (recipes) {
-                    recipesContainer.innerHTML = ''; // Tøm containeren for at vise nye søgeresultater
+                    recipesContainer.innerHTML = '';
                     recipes.forEach(recipe => {
                         const recipeCard = createRecipeCard(recipe);
                         recipesContainer.appendChild(recipeCard);
@@ -27,20 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching recipes:', error);
             });
     }
-    //___________________________________________________
-    //OPSKRIFT CARDS
 
-    
-    //___________________________________________________
+    // Hent opskriftsinfo fra API'en ved hjælp af opskriftens ID
+    function fetchRecipeDetails(recipeId) {
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+
+        return fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => data.meals[0])
+            .catch(error => {
+                console.error('Error fetching recipe details:', error);
+            });
+    }
 
     // Søg opskrifter ved at kalde fetchRecipes med søgetermen
     function searchRecipes() {
         const searchTerm = searchInput.value.trim();
         fetchRecipes(searchTerm);
     }
-
-    // Tilføj event listener til søgeknappen
-    searchButton.addEventListener('click', searchRecipes);
 
     // Funktion til at oprette en opskriftskort HTML-element
     function createRecipeCard(recipe) {
@@ -54,11 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.createElement('h2');
         title.textContent = recipe.strMeal;
 
+        // Tilføj klikhåndtering til at vise opskriftsdetaljer
+        card.addEventListener('click', async () => {
+            const details = await fetchRecipeDetails(recipe.idMeal);
+            displayRecipeDetails(details);
+        });
+
         card.appendChild(image);
         card.appendChild(title);
 
         return card;
     }
+
+    // Funktion til at vise opskriftsdetaljer
+    function displayRecipeDetails(recipe) {
+        if (recipe) {
+            alert(`Recipe Details:\nName: ${recipe.strMeal}\nCategory: ${recipe.strCategory}\nArea: ${recipe.strArea}\nInstructions: ${recipe.strInstructions}`);
+        } else {
+            alert('Recipe details not available.');
+        }
+    }
+
+    // Tilføj event listener til søgeknappen
+    searchButton.addEventListener('click', searchRecipes);
 
     // Initial visning af opskrifter uden søgning
     fetchRecipes();
