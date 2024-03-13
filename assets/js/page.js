@@ -1,4 +1,3 @@
-// Opdateret JavaScript-fil (scripts.js)
 document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.getElementById('recipes-container');
     const searchInput = document.getElementById('search-input');
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchRecipes(searchTerm) {
         const apiUrl = searchTerm
             ? `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
-            : 'https://www.themealdb.com/api/json/v1/1/search.php?f=c';
+            : 'https://www.themealdb.com/api/json/v1/1/search.php?f=c'; //API HENTET
 
         fetch(apiUrl)
             .then(response => response.json())
