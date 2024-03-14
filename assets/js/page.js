@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recipesContainer = document.getElementById('recipes-container');
     const searchInput = document.getElementById('search-input');
     const searchButton = document.querySelector('button');
+    const imageElement = document.createElement('img');
 
     // Hent opskrifter fra API'en ved siden af søgefunktionen
     function fetchRecipes(searchTerm) {
@@ -69,14 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return card;
     }
-
+ 
     // Funktion til at vise opskriftsdetaljer
     function displayRecipeDetails(recipe) {
         if (recipe) {
-            alert(`Recipe Details:\nName: ${recipe.strMeal}\nCategory: ${recipe.strCategory}\nArea: ${recipe.strArea}\nInstructions: ${recipe.strInstructions}`);
+            //alert(`Recipe Details:\nName: ${recipe.strMeal}\nCategory: ${recipe.strCategory}\nArea: ${recipe.strArea}\nInstructions: ${recipe.strInstructions}`);
+            recipesContainer.innerHTML = `<h1>Recipe Details</h1> <h2>Name: ${recipe.strMeal}</h2> <h2>\nCategory: ${recipe.strCategory}</h2> <h2>\nArea: ${recipe.strArea}</h2>  <h2>\nInstructions:</h2> ${recipe.strInstructions}  <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="450">`;
         } else {
             alert('Recipe details not available.');
         }
+        
     }
 
     // Tilføj event listener til søgeknappen

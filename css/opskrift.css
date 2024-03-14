@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #e7e6e6;
@@ -10,8 +11,10 @@ header {
     color: #62d63e;
     text-align: center;
     padding: 1em 0;
-    font-weight: 600;
+    font-weight: 400;
     font-size: x-large;
+    font-size: 2rem; 
+    font-family: 'Pacifico', sans-serif;
 }
 
 #recipes-container {
@@ -19,6 +22,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .recipe-card {
@@ -46,24 +50,83 @@ header {
     font-size: 1.2em;
 }
 
-
+/* SEARCH CONTAINER */
+.header-main div input {
+    border-radius: 1rem;
+    width: 20rem;
+    height: 2rem;
+    border: none;
+}
+.header-main div button {
+    width: 5rem;
+    height: 2rem;
+    background-color: #62d63e;
+    border-radius: 1rem;
+    border: none;
+}
+.header-main div button:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
 /* MEDIA QUESRIES */
 /* TABLET  */
 @media only screen and (max-width: 768px) { 
     body {
-        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
+    }
+    .header-main div input {
+        border-radius: 1rem;
+        width: 20rem;
+        height: 2rem;
+        border: none;
+    }
+    .header-main div button {
+        width: 5rem;
+        height: 2rem;
+        background-color: #62d63e;
+        border-radius: 1rem;
+        border: none;
+    }
+    .header-main div button:hover {
+        filter: brightness(80%);
+        cursor: pointer;
     }
     
   }
   /* MOBILE */
   @media only screen and (max-width: 480px) {
     body {
-        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
+    }
+    header {
+        background-color: #771e1e;
+        color: #62d63e;
+        text-align: center;
+        padding: 1em 0;
+        font-weight: 400;
+        font-size: x-large;
+        font-size: 1rem;
+        font-family: 'Pacifico', sans-serif;
+    }
+    .header-main div input {
+        border-radius: 1rem;
+        width: 20rem;
+        height: 2rem;
+        border: none;
+    }
+    .header-main div button {
+        width: 5rem;
+        height: 2rem;
+        background-color: #62d63e;
+        border-radius: 1rem;
+        border: none;
+    }
+    .header-main div button:hover {
+        filter: brightness(80%);
+        cursor: pointer;
     }
   }
