@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+/* #MAIN CSS */
 body {
     margin: 0;
     padding: 0;
@@ -49,6 +49,60 @@ header {
     margin: 0;
     font-size: 1.2em;
 }
+.footer-main {
+    background-color: #771e1e;
+    color: #62d63e;
+    font-family: 'Pacifico', sans-serif;
+}
+.footer-main p, h3 {
+    margin-left: 35%;
+    margin-bottom:-0.3rem;
+}
+/* MENU BUTTON */
+.burger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 2rem;
+    width: 2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .line {
+    background-color: #fff;
+    height: 0.2rem;
+    width: 100%;
+    margin-left: 0.5rem;
+    background-color: #62d63e;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    padding: 10px 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  nav ul li a:hover {
+    color: #62d63e;
+    transition: 400ms;
+  }
+  /* MENU BUTTON END */
+/* #MAIN CSS END */
+
+
 
 /* SEARCH CONTAINER */
 .header-main div input {
@@ -93,6 +147,48 @@ header {
         filter: brightness(80%);
         cursor: pointer;
     }
+    .burger-menu {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 2rem;
+        width: 2rem;
+      }
+      
+      .line {
+        background-color: #fff;
+        height: 0.2rem;
+        width: 100%;
+        margin-left: 0.5rem;
+        background-color: #62d63e;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav ul li {
+        padding: 10px 0;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer-main  {
+        height: 10rem;
+        width: 100%;
+        background-color: #771e1e;
+        color: #62d63e;
+        font-family: 'Pacifico', sans-serif;
+    }
     
   }
   /* MOBILE */
@@ -128,5 +224,47 @@ header {
     .header-main div button:hover {
         filter: brightness(80%);
         cursor: pointer;
+    }
+    .burger-menu {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 2rem;
+        width: 2rem;
+      }
+      
+      .line {
+        background-color: #fff;
+        height: 0.2rem;
+        width: 100%;
+        margin-left: 0.5rem;
+        background-color: #62d63e;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav ul li {
+        padding: 10px 0;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer-main  {
+        height: 10rem;
+        width: 100%;
+        background-color: #771e1e;
+        color: #62d63e;
+        font-family: 'Pacifico', sans-serif;
     }
   }
