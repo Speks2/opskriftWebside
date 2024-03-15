@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial visning af opskrifter uden søgning
     fetchRecipes();
 });
+// BURGER MENU 
 function toggleMenu() {
     var menu = document.getElementById("menu");
     if (menu.style.display === "block") {
